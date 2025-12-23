@@ -1,0 +1,60 @@
+<!-- xin chào người lạ, mình là anhduc.onlien | mình có tìm được file code noel này và fix lại, mình xin phép share mọi người ạ! -->
+<!DOCTYPE html>
+<html lang="VN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOEL_V2</title>
+    <link rel="stylesheet" href="noel_v2.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Loading Holiday Magic</div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-layer">
+        <h1 id="greeting-text">Merry Christmas</h1>
+        
+        <div id="greeting-input-wrapper" class="upload-wrapper">
+            <input type="text" id="greeting-input" placeholder="Nhập lời chúc của bạn..." maxlength="50">
+            <button id="update-greeting-btn" class="upload-btn" style="margin-left: 10px;">Cập nhật</button>
+        </div>
+        
+        <div class="upload-wrapper">
+            <label class="upload-btn">
+                Thêm ảnh
+                <input type="file" id="file-input" multiple accept="image/*">
+            </label>
+            <button id="screenshot-btn" class="upload-btn" style="margin-left: 10px;">Chụp ảnh</button>
+            <div class="hint-text">
+                Nhấn 'Ctrl+H' để ẩn/hiện UI | 'P' để bật Photo Wall | 'B' để bật/tắt Bloom
+            </div>
+        </div>
+    </div>
+
+    <!-- Webcam hidden structure -->
+    <div id="webcam-wrapper">
+        <video id="webcam" autoplay playsinline style="display:none;"></video>
+        <canvas id="webcam-preview"></canvas>
+    </div>
+
+    <script type="module" src="noel_v2.js"></script>
+</body>
+</html>
