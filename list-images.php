@@ -8,7 +8,8 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
 $imagesDir = __DIR__ . '/images';
-$allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+// normalized, no leading dots, all lowercase
+$allowedExtensions = ['heic', 'jpg', 'jpeg', 'png', 'webp', 'gif'];
 $images = [];
 
 if (is_dir($imagesDir)) {
@@ -16,7 +17,7 @@ if (is_dir($imagesDir)) {
     foreach ($files as $file) {
         if ($file === '.' || $file === '..') continue;
         
-        $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+        $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION)); // returns 'jpg' (no dot)
         if (in_array($extension, $allowedExtensions)) {
             $images[] = $file;
         }

@@ -11,7 +11,7 @@ const url = require('url');
 
 const PORT = 3001;
 const IMAGES_DIR = path.join(__dirname, 'images');
-const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+const ALLOWED_EXTENSIONS = ['HEIC','.jpg', '.JPG', '.jpeg', '.png', '.webp', '.gif'];
 
 const server = http.createServer((req, res) => {
     // CORS headers
